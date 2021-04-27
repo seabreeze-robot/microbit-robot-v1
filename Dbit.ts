@@ -373,7 +373,7 @@ namespace sloth {
         if (degree < 181 && degree > -1) {
             // 50hz: 20,000 us
             let v_us = (degree * (maxPulse - minPulse) / 180 + minPulse) // 0.5 ~ 2.5
-            let value = v_us * 8192 / 20000
+            let value = v_us * 512 / 20000
             setPwm(channel, 0, value)
         }
     }
