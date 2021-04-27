@@ -63,13 +63,13 @@ namespace sloth {
         ],
         [    // walk backward
             //LL, LF, RL, RF
-            [0, 10, 0, 10],
-            [10, 10, 10, 10],
-            [10, 0, 10, 0],
+            [0, 40, 0, 20],
+            [30, 40, 30, 20],
+            [30, 0, 30, 0],
 
-            [0, -10, 0, -10],
-            [-10, -10, -10, -10],
-            [-10, 0, -10, 0],
+            [0, -20, 0, -40],
+            [-30, -20, -30, -40],
+            [-30, 0, -30, 0],
         ],
         [   // turn left
             //LL, LF, RL, RF
@@ -373,7 +373,7 @@ namespace sloth {
         if (degree < 181 && degree > -1) {
             // 50hz: 20,000 us
             let v_us = (degree * (maxPulse - minPulse) / 180 + minPulse) // 0.5 ~ 2.5
-            let value = v_us * 4096 / 20000
+            let value = v_us * 1024 / 20000
             setPwm(channel, 0, value)
         }
     }
